@@ -1,0 +1,30 @@
+img{
+    width: 100px;
+    height: 100px;
+}
+.swiper{
+  padding: 50px;
+}
+.swiper-button-prev::after ,.swiper-button-next::after{
+    color: white;
+    font-size: 17px !important;
+   
+}
+.swiper-button-prev,.swiper-button-next{
+    background-color: rgb(103, 102, 138);
+    width: 30px !important;
+    height: 30px !important;
+    
+    border-radius: 50%;   
+}
+.swiper-pagination-bullet{
+background-color: rgb(103, 102, 138) !important;
+
+}
+.categoty h2{
+    font-size: 15px !important;
+    display: flex;
+    color: black;
+}
+
+

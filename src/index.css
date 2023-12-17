@@ -1,0 +1,15 @@
+:root{
+    --mainColer: rgb(103, 102, 138);
+}
+body{
+    background-color: rgb(226, 226, 228)!important;
+}
+.bg-mainColor{
+    background-color: rgb(103, 102, 138) ;
+}
+.text-Color{
+    color: var(--mainColer);
+}
+.bg-Footercolor{
+    background-color: rgb(93, 93, 105) ;
+}
