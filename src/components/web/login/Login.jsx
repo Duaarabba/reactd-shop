@@ -9,8 +9,11 @@ import { UserContext } from './../context/User';
 
 
 export default function Login() {
-  let {setUserToken}= useContext(UserContext);
   const navigate = useNavigate();
+  let {setUserToken,userToken}= useContext(UserContext);
+  if (userToken){
+   navigate(-1)
+  }
   const initialValues={
         email:'',
         password:'',

@@ -4,11 +4,13 @@ import Categories from '../categories/Categories';
 import './Navbar.css'
 import { UserContext } from '../context/User';
 import { ContextCart } from '../context/FeatureCart.jsx';
+import Loder from '../loader/Loader.jsx'
 import { FaCartArrowDown } from "react-icons/fa6";
+
 export default function Navbar() {
  
  
-  let {userToken,SetUserToken ,userData ,setUserData}=useContext(UserContext);
+  let {userToken,SetUserToken ,userData,loading ,setUserData}=useContext(UserContext);
   let {cart,setCart}=useContext(ContextCart);
    const navigate=useNavigate()
    const logout =()=>{
@@ -18,6 +20,9 @@ export default function Navbar() {
     navigate('/')
     
    }
+   if(loading){
+    return <h2 className='text-center py-3 text-Color'>......Loading</h2>
+  }
   console.log(cart)
   return (
     <nav className="navbar navbar-expand-lg bg-mainColor py-3 ">
@@ -36,7 +41,7 @@ export default function Navbar() {
           <Link className="nav-link fs-5" to={'/categories'}>Categories</Link>
         </li>
         <li className="nav-item">
-          <a className="nav-link fs-5" href="#">Products</a>
+          <Link className="nav-link fs-5" to={'/allproducts'}>Products</Link>
         </li>
         {userToken? <li className="nav-item">
          <Link className="nav-link fs-5" to="/cart">Cart<FaCartArrowDown  className='text-white ms-2 ms-3'/> {cart.count}</Link>

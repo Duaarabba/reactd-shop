@@ -10,7 +10,8 @@ import Register from '../components/web/register/Register.jsx';
 import Login from '../components/web/login/Login.jsx';
 import Cart from '../components/web/cart/Cart.jsx';
 import CategoriesDetails from '../components/web/categories/CategoriesDetails.jsx';
-import Products from '../components/web/products/Product.jsx';
+import AllProducts from '../components/web/products/AllProducts.jsx';
+import Product from '../components/web/products/Product.jsx';
 import ProtectedRout from './protectedRout/ProtectedRout.jsx';
 import ForgetPass from '../components/web/forgetpass/ForgetPass.jsx';
 import Reset from '../components/web/forgetpass/Reset.jsx';
@@ -45,8 +46,17 @@ import Order from '../components/web/order/Order.jsx';
       },
       {
         path:'profile',
-        element:<Profile />,
+        element:
+        <ProtectedRout>
+          <Profile />
+        </ProtectedRout>
+        ,
     },
+    {
+      path:'allproducts',
+      element:<AllProducts />,
+  },
+
     {
       path:'order',
       element:<Order />,
@@ -70,7 +80,7 @@ import Order from '../components/web/order/Order.jsx';
         },
         {
           path:'/products/:ProductId',
-          element:<Products />,
+          element:<Product />,
         },
           {
             path:'*',

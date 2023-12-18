@@ -7,6 +7,7 @@ export let UserContext=createContext()
 export default function UserContextProvider({children}){
     let [userToken,setUserToken]= useState(null);
     let [userData,setUserData]=useState(null);
+    const [loading,setLoder]=useState(true);
 
     const getUserData=async()=>{
         if(userToken){
@@ -15,12 +16,13 @@ export default function UserContextProvider({children}){
             )
             console.log(data);
             setUserData(data.user)
+            setLoder(false)
         }
     }
     useEffect(()=>{
         getUserData()
     },[userToken])
-   return <UserContext.Provider value={{userToken,setUserToken,userData,setUserData}}>
+   return <UserContext.Provider value={{loading,setLoder,userToken,setUserToken,userData,setUserData}}>
         {children}
     </UserContext.Provider>
 }

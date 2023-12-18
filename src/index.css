@@ -11,5 +11,5 @@ body{
     color: var(--mainColer);
 }
 .bg-Footercolor{
-    background-color: rgb(93, 93, 105) ;
+    background-color: rgb(93, 93, 105) !important ;
 }
