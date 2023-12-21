@@ -11,6 +11,7 @@ import { FaCartArrowDown } from "react-icons/fa6";
 import {ContextCart} from '../context/FeatureCart.jsx'
 import Loader from '../loader/Loader';
 import './Products.css'
+import { FaUser } from "react-icons/fa";
 export default function Product() {
 
   let {setUserToken,userToken}= useContext(UserContext);
@@ -46,7 +47,7 @@ export default function Product() {
               
             }
              catch (error) {
-              
+               console.log(error)
             } 
       
       
@@ -122,8 +123,9 @@ return (
         data.reviews.map((review,index)=>{
           return(
             <div className='d-flex'>
-              <h5>{index+1} </h5>
+              <FaUser />
             <p className='ms-3'>{review.comment}</p>
+            
             </div>
           )
         })

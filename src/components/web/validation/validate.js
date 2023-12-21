@@ -23,7 +23,7 @@ export  const registerScheam=yup.object({
  })
  export  const OrderPassScheam =yup.object({
   
-  couponName:yup.string().required('coupon name is requierd'),
+  
   address:yup.string().required('your address requried'),
   phone:yup.string().required('your phone is requried'),
  })
