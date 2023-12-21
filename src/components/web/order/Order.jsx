@@ -2,16 +2,14 @@ import React, { useContext } from 'react'
 import Input from '../../pages/Input.jsx';
 import { useFormik } from 'formik';
 import {OrderPassScheam} from '../validation/validate.js'
-import {  toast } from 'react-toastify';
-import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
-// import { UserContext } from './../context/User';
-// import { ContextOrder } from '../context/OrderContext.jsx';
+import { UserContext } from './../context/User';
+import { ContextOrder } from '../context/OrderContext.jsx';
 
 
 export default function Order() {
-  // let{CreateOrdercontext}=useContext(ContextOrder);
-  // let {setUserToken}= useContext(UserContext);
+  let{CreateOrdercontext}=useContext(ContextOrder);
+  let {setUserToken}= useContext(UserContext);
   const navigate = useNavigate();
   const initialValues={
      couponName:'',
@@ -21,9 +19,9 @@ export default function Order() {
 
      const onSubmit= async users=>{
       
-      // const req = await CreateOrdercontext (users);
-      // // return req;
-      // console.log (req)
+      const req = await CreateOrdercontext (users);
+       return req;
+      console.log (req)
       };
       
   const formik= useFormik({

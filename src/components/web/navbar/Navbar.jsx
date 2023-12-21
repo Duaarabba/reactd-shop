@@ -20,9 +20,9 @@ export default function Navbar() {
     navigate('/')
     
    }
-   if(loading){
-    return <h2 className='text-center py-3 text-Color'>......Loading</h2>
-  }
+  //  if(loading){
+  //   return <h2 className='text-center py-3 text-Color'>......Loading</h2>
+  // }
   console.log(cart)
   return (
     <nav className="navbar navbar-expand-lg bg-mainColor py-3 ">

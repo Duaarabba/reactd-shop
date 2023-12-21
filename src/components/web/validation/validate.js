@@ -27,3 +27,9 @@ export  const registerScheam=yup.object({
   address:yup.string().required('your address requried'),
   phone:yup.string().required('your phone is requried'),
  })
+ export  const ReviewsScheam =yup.object({
+  
+  comment:yup.string().required('your comment is requried'),
+  rating:yup.string().required('rating is requried'),
+ 
+ })

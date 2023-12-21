@@ -1,6 +1,6 @@
 import axios from "axios";
 import { createContext, useState } from "react";
-import {  toast } from 'react-toastify';
+
 
 
 export const ContextOrder=createContext(null);
@@ -9,15 +9,32 @@ export const ContextOrder=createContext(null);
 
 export function OrderContextProvider({children}){
 
-    const CreateOrdercontext=async(productId)=>{
+     const [order,setOrder]=useState(null)
+    const CreateOrdercontext=async({couponName,address,phone})=>{
         try {
          const token = localStorage.getItem('userToken')
          const {data}= await axios.post (`${import.meta.env.VITE_API_URL}/order`,
-         {couponName,address,phone},
+         {'couponName':couponName,
+           'address':address,
+            'phone':phone
+          },
          {headers:{Authorization:`Tariq__${token}`}}
          )
         
-         
+          console.log(data);
+          return (data);
+        } 
+        catch (error) {
+          console.log(error);
+        }
+      }
+      const getOrder=async()=>{
+        try {
+         const token = localStorage.getItem('userToken')
+         const {data}= await axios.get (`${import.meta.env.VITE_API_URL}/order`,
+         {headers:{Authorization:`Tariq__${token}`}}
+         )
+          setOrder(data)
           return (data);
         } 
         catch (error) {
@@ -25,7 +42,7 @@ export function OrderContextProvider({children}){
         }
       }
 
-      return  <ContextOrder.Provider value={{CreateOrdercontext}}>
+      return  <ContextOrder.Provider value={{CreateOrdercontext,getOrder,order}}>
       {children}
    </ContextOrder.Provider> 
 }

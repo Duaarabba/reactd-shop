@@ -17,6 +17,9 @@ import ForgetPass from '../components/web/forgetpass/ForgetPass.jsx';
 import Reset from '../components/web/forgetpass/Reset.jsx';
 import Profile from '../components/web/profile/Profile.jsx';
 import Order from '../components/web/order/Order.jsx';
+import Userinfo from '../components/web/profile/Userinfo.jsx';
+import UserContact from '../components/web/profile/UserContact.jsx';
+import UserOrderInfo from '../components/web/profile/UserOrderInfo.jsx';
 
  export  const router = createBrowserRouter([
 
@@ -49,8 +52,24 @@ import Order from '../components/web/order/Order.jsx';
         element:
         <ProtectedRout>
           <Profile />
-        </ProtectedRout>
-        ,
+        </ProtectedRout>,
+         children:[
+          {
+          index:true,
+           
+           element:<Userinfo/>,
+          },
+          {
+          path:'contact',
+          element:<UserContact/>
+          },
+          {
+          path:'userOrder',
+          element:<UserOrderInfo/>
+          }
+          
+        ]
+        
     },
     {
       path:'allproducts',
