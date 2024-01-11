@@ -3,12 +3,13 @@ import { createContext, useState } from "react";
 
 
 
+
 export const ContextOrder=createContext(null);
 
 
 
 export function OrderContextProvider({children}){
-
+  
      const [order,setOrder]=useState(null)
     const CreateOrdercontext=async({couponName,address,phone})=>{
         try {
@@ -34,7 +35,8 @@ export function OrderContextProvider({children}){
          const {data}= await axios.get (`${import.meta.env.VITE_API_URL}/order`,
          {headers:{Authorization:`Tariq__${token}`}}
          )
-          setOrder(data)
+         setOrder(data);
+          
           return (data);
         } 
         catch (error) {

@@ -15,7 +15,7 @@ export default function Profile() {
 <div className={`${style.profile}`}>
        <div className={`${style.profileLinks}`}>
         <nav >
-        <Link to='/'>Info</Link>
+        <Link >Info</Link>
         <Link to='contact'>Contact</Link>
         <Link to='userOrder'>Order</Link>
         </nav>

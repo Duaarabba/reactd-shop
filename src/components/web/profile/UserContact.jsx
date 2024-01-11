@@ -1,7 +1,7 @@
 
 import React, { useContext } from 'react'
 import { UserContext } from '../context/User.jsx';
-
+import './User.css'
  
 
 export default function UserContact() {
@@ -12,10 +12,10 @@ export default function UserContact() {
       return <Loader />
     }
   return (
-    <div>
-        <h2 className='mt-4 text-Color '>User Contact</h2>
-        <h4>Your Name: {userData.userName}</h4>
-        <h4>Your Email :{userData.email}</h4>
+    <div className='py-5'>
+        <h4 className='mt-4 text-Color '>User Contact</h4>
+        <h5>Your Name: {userData.userName}</h5>
+        <h5>Your Email :{userData.email}</h5>
         
 
     </div>

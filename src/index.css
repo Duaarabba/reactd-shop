@@ -1,3 +1,7 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600;700&family=Roboto+Serif:ital,opsz,wght@0,8..144,400;1,8..144,300;1,8..144,500&display=swap');
+/* font-family: 'Roboto Serif', serif; */
 :root{
     --mainColer: rgb(103, 102, 138);
 }
@@ -12,4 +16,15 @@ body{
 }
 .bg-Footercolor{
     background-color: rgb(93, 93, 105) !important ;
+}
+h2,h3,h4,h1{
+    font-family: 'Dancing Script', cursive;
+    font-weight: 700;
+    font-size: 60px;
+}
+h6{
+    font-size: 35px;   
+}
+p{
+    font-family: 'Roboto Serif', serif;
 }

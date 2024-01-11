@@ -18,7 +18,7 @@ export default function UserOrderInfo() {
   return (
     
      <div className="container my-5">
-         <h2 className='text-Color py-3'>Orders</h2>
+         <h4 className='text-Color py-3'>Orders</h4>
           <table class="table ">
   <thead >
     <tr >

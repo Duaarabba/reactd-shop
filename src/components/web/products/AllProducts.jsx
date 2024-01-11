@@ -3,7 +3,7 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react';
 import Loader from '../loader/Loader';
 import { Link } from 'react-router-dom';
-import './AllProducts.css'
+import  style from './AllProducts.module.css'
 // import { FaStar } from "react-icons/fa";
 import { FaStar } from "react-icons/fa6";
 
@@ -39,17 +39,20 @@ export default function AllProducts() {
   
    return(
     <div className="container">
-      <div className="row">
+      <div className="row align-items-lg-stretch">
 
         
 
         {products?.map((ele)=>
           <div className="col-md-3 pt-5" key={ele._id}>
-             <div className="card" style={{width: ''}}>
-               <img src={ele.mainImage.secure_url } className="card-img-top img-fluid" alt="..." />
-               <div className="card-body">
-                   <h5 className="card-title text-Color">{ele.name}</h5>
-                   <p className="card-text">Price: {ele.price}</p>
+             <div className="card overflow-hidden" >
+              <div className={`${style.dimention}` } >
+              <img src={ele.mainImage.secure_url } className="card-img-top img-fluid   " alt="..." />
+              </div>
+              
+               <div className={`${style.cardBody}`} >
+                   <h6 className="card-title text-Color  ">{ele.name}</h6>
+                   <p className="card-text">Price: {ele.price} ₪</p>
                    <div className="star">
                       <span>Rating : </span>
                      {Array.from({length: Math.ceil(ele.avgRating)}).map((ele)=>

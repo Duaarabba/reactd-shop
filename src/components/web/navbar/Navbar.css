@@ -1,6 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Courgette&family=Dancing+Script:wght@500;600;700&display=swap');
 nav{
     background-color: var(--mainColer);
 }
 .nav-link{
     color: white !important;
+}
+.navbar-brand{
+    font-family: 'Dancing Script', cursive;
+   
+    font-size: 40px !important;
+}
+li{
+    
+    font-family: 'Courgette', cursive;
+    font-size: 60!important; 
+    font-weight: 500;
 }

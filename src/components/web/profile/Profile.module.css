@@ -6,7 +6,7 @@
 .profile nav{
     padding-top: 20px;
     background-color:   rgb(134, 134, 139);
-    height: 100vh;
+    height:calc(100vh - 101.88px) ;
     width: 300px;
     flex-direction: column;
     gap:15px;
@@ -20,3 +20,4 @@
     text-decoration: none;
     color: white;
 }
+

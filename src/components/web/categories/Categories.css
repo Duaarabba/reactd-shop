@@ -26,5 +26,21 @@ background-color: rgb(103, 102, 138) !important;
     display: flex;
     color: black;
 }
+h1{
+    width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 3s infinite alternate-reverse steps(27);
+    /* border-right: 1px solid #3333; */
+    margin: auto;
+ }
+ @keyframes typing {
+    from{
+       width: 0;
+    }
+    to{
+       width: 244px;
+    }
+ } 
 
 

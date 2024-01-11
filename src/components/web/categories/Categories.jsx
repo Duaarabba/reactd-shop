@@ -29,6 +29,9 @@ export default function Categories() {
 
   return (
   <div className="container py-5">
+
+    <h1 className='text-Color  py-5'>Categories</h1>
+
    
 
    <Swiper 
